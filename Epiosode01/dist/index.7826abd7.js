@@ -2954,29 +2954,18 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _client = require("react-dom/client");
+var _client = require("react-dom/client"); //Episode 01
+ // const parent = React.createElement("div",{id:"parent"},
+ //                        [ React.createElement("div",{id:"child1"},
+ //                        [React.createElement("h1",{},"I am h1 tag"),React.createElement("h2",{},"I am h2 tag")]),
+ //                        React.createElement("div",{id:"child2"},
+ //                        [React.createElement("h1",{},"I am h1 tag"),React.createElement("h2",{},"I am h2 tag")])])
+ // console.log(parent);
+ // //const heading = React.createElement("h1",{id:"heading"},"Hello Word From React");
+ // const root = ReactDOM.createRoot(document.getElementById("root"))
+ // console.log(root);
+ // root.render(parent);
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const parent = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-    id: "parent"
-}, [
-    /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-        id: "child1"
-    }, [
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {}, "I am h1 tag"),
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", {}, "I am h2 tag")
-    ]),
-    /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-        id: "child2"
-    }, [
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {}, "I am h1 tag"),
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", {}, "I am h2 tag")
-    ])
-]);
-console.log(parent);
-//const heading = React.createElement("h1",{id:"heading"},"Hello Word From React");
-const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-console.log(root);
-root.render(parent);
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
