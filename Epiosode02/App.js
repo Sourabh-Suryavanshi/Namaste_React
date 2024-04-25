@@ -29,3 +29,4 @@ const Headingcomponent2 = () => <h1> Hello I am React Functional child !</h1>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Headingcomponent />);
+//Code Uploaded
