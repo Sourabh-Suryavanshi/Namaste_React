@@ -2972,17 +2972,24 @@ const jsxHeading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
 const Headingcomponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         id: "container",
         children: [
+            jsxHeading,
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 id: "head",
                 children: "Namaste React !"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 14,
+                lineNumber: 15,
+                columnNumber: 5
+            }, undefined),
+            Headingcomponent1(),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Headingcomponent1, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 17,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Headingcomponent1, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 15,
+                lineNumber: 18,
                 columnNumber: 5
             }, undefined)
         ]
@@ -2999,18 +3006,18 @@ const Headingcomponent1 = ()=>{
                 children: " Hello I am React Functional Component!"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 22,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Headingcomponent2, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 23,
+                lineNumber: 26,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 21,
+        lineNumber: 24,
         columnNumber: 5
     }, undefined);
 };
@@ -3019,14 +3026,14 @@ const Headingcomponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
         children: " Hello I am React Functional child !"
     }, void 0, false, {
         fileName: "App.js",
-        lineNumber: 28,
+        lineNumber: 31,
         columnNumber: 33
     }, undefined);
 _c2 = Headingcomponent2;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Headingcomponent, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 31,
+    lineNumber: 34,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2;

@@ -11,8 +11,11 @@ const jsxHeading = (
 
 const Headingcomponent = () => (
   <div id="container">
+    {jsxHeading}
     <h1 id="head">Namaste React !</h1>
+    {Headingcomponent1()}
     <Headingcomponent1 />
+    <Headingcomponent1></Headingcomponent1>
   </div>
 );
 
@@ -29,4 +32,4 @@ const Headingcomponent2 = () => <h1> Hello I am React Functional child !</h1>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Headingcomponent />);
-//Code Uploaded
+
