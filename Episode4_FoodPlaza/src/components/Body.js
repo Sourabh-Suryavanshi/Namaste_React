@@ -12,11 +12,11 @@ const Body = () => {
   // const setListofrestaurants = arr[1];
 
   useEffect(() => {
-    // console.log("useEffect Called");
+    console.log("useEffect Called");
     fetchData();
   }, []);
 
-  //console.log("Component Rendered");
+  console.log("Component Rendered");
   const fetchData = async () => {
     const URL =
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
@@ -57,19 +57,18 @@ const Body = () => {
           >
             Search
           </button>
+          <button
+            className="filter-btn"
+            onClick={() => {
+              const filterdata = listofRestaurants.filter(
+                (res) => res?.info?.avgRating > 4
+              );
+              setFilteredResto(filterdata);
+            }}
+          >
+            TOP RATED RESTAURANTS
+          </button>
         </div>
-
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filterdata = listofRestaurants.filter(
-              (res) => res?.info?.avgRating > 4
-            );
-            setFilteredResto(filterdata);
-          }}
-        >
-          TOP RATED RESTAURANTS
-        </button>
       </div>
       <div className="res-container">
         {/* <RestaurantCard
