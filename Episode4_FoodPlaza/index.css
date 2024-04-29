@@ -30,8 +30,15 @@
   border: 1px solid black;
 }
 
-.search {
+.filter-btn,
+.btn {
   padding: 10px;
+  margin: 10px;
+}
+
+.Sfilter-btn {
+  height: 50px;
+  width: 200px;
 }
 .res-image {
   width: 100%;
@@ -40,6 +47,17 @@
 
 .res-container {
   /* border: 1px solid gray; */
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer {
+  background-color: lightgray;
+  width: 200px;
+  height: 400px;
+  padding: 5px;
+  margin: 5px;
+}
+.shimmer-container {
   display: flex;
   flex-wrap: wrap;
 }
