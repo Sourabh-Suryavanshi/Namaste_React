@@ -1,5 +1,5 @@
 const Shimmer = () => {
-  console.log("Shimmer Called");
+  // console.log("Shimmer Called");
   return (
     <div>
       <div className="btn">

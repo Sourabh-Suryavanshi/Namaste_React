@@ -5,14 +5,18 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listofRestaurants, setListofrestaurants] = useState([]);
+  const [serachResto, setSearchResto] = useState("");
+  const [filteredResto, setFilteredResto] = useState([]);
   // const arr = useState(resList);
   // const listofRestaurants = arr[0];
   // const setListofrestaurants = arr[1];
 
   useEffect(() => {
+    // console.log("useEffect Called");
     fetchData();
   }, []);
 
+  //console.log("Component Rendered");
   const fetchData = async () => {
     const URL =
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
@@ -22,22 +26,46 @@ const Body = () => {
     setListofrestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setFilteredResto(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
-  if (listofRestaurants.length == 0) {
-    return <Shimmer />;
-  }
+  //Conditional Rendering
+  // if (listofRestaurants.length == 0) {
+  //   return <Shimmer />;
+  // }
 
-  return (
+  return listofRestaurants.length == 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search-bar">
+          <input
+            type="text"
+            value={serachResto}
+            onChange={(e) => setSearchResto(e.target.value)}
+          />
+          <button
+            onClick={() => {
+              const filteredRestaurants = listofRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(serachResto.toLowerCase())
+              );
+              setFilteredResto(filteredRestaurants);
+            }}
+          >
+            Search
+          </button>
+        </div>
+
         <button
           className="filter-btn"
           onClick={() => {
             const filterdata = listofRestaurants.filter(
               (res) => res?.info?.avgRating > 4
             );
-            setListofrestaurants(filterdata);
+            setFilteredResto(filterdata);
           }}
         >
           TOP RATED RESTAURANTS
@@ -56,7 +84,7 @@ const Body = () => {
             rating="4.3 Star"
             ETA="15 min"
           /> */}
-        {listofRestaurants.map((restaurant) => (
+        {filteredResto.map((restaurant) => (
           <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
         ))}
       </div>
