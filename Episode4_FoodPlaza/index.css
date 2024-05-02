@@ -69,3 +69,16 @@
   margin: 10px;
   padding: 10px;
 }
+
+.User-Component{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-card{
+  width: 250px;
+  height: 400px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
