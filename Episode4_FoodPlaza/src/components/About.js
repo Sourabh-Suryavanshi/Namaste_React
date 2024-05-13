@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Userclass from "./Userclass";
 import Users from "./Users";
+import Profileclass from "./Profileclass"
 
 const About = () => {
   const [count, setCount] = useState(5)
@@ -16,8 +17,9 @@ const About = () => {
       <h2>Count : {count}</h2>
       <h2>This webpage is designed by Mr. Sourabh Sambhaji Suryavanshi</h2>
       <div className="User-Component">
+        {/* <Profileclass/> */}
       <Users name={"Sourabh"} location={"Sangli"} IncrementCount={IncrementCount} button={disable}/>
-      <Userclass name={"Manish"} location={"Ahamadnagar"}/>
+      {/* <Userclass name={"Manish"} location={"Ahamadnagar"}/> */}
       </div>
     </div>
   );

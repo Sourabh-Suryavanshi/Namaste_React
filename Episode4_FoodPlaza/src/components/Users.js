@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Users = (props) =>{
 
@@ -6,6 +6,15 @@ const Users = (props) =>{
     const [count1] = useState(1);
 
     const {name,location,IncrementCount,button} = props
+    useEffect(()=>{
+       const timer = setInterval(()=>{
+            console.log("UseEffect from Function Component");
+        },1000)
+
+        return()=>{
+        clearInterval(timer);
+        }
+    },[])
     return(
         <div className="user-card">
             <h1>Count : {count}</h1>
