@@ -70,12 +70,12 @@
   padding: 10px;
 }
 
-.User-Component{
+.User-Components {
   display: flex;
   flex-wrap: wrap;
 }
 
-.user-card{
+.user-card {
   width: 250px;
   height: 400px;
   border: 1px solid black;

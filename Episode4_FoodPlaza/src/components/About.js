@@ -4,13 +4,13 @@ import Users from "./Users";
 import Profileclass from "./Profileclass"
 
 const About = () => {
-  const [count, setCount] = useState(5)
-  const [disable,setDisable] = useState(false)
+  const [count, setCount] = useState(5);
+  const [disable, setDisable] = useState(false);
 
-  const IncrementCount =()=>{
-      if(count < 10)setCount(count+1)
-      if(count == 10) setDisable(true)
-  }
+  const IncrementCount = () => {
+    if (count < 10) setCount(count + 1);
+    if (count == 10) setDisable(true);
+  };
   return (
     <div>
       <h1>About Us</h1>
