@@ -3,41 +3,52 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import useRestaurantList from "../utils/useRestaurantList";
 
 const Body = () => {
-  const [listofRestaurants, setListofrestaurants] = useState([]);
+
   const [serachResto, setSearchResto] = useState("");
   const [filteredResto, setFilteredResto] = useState([]);
   // const arr = useState(resList);
   // const listofRestaurants = arr[0];
   // const setListofrestaurants = arr[1];
 
-  useEffect(() => {
-    // console.log("useEffect Called");
-    fetchData();
-  }, []);
+  const resData = useRestaurantList();
+  useEffect(()=>{
+    setFilteredResto(resData[1])
+  },[resData[1]])
 
-  // console.log("Component Rendered");
-  const fetchData = async () => {
-    const URL =
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-    const data = await fetch(URL);
-    const json = await data.json();
+  // useEffect(() => {
+  //   // console.log("useEffect Called");
+  //   fetchData();
+  // }, []);
 
-    setListofrestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredResto(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
+  // // console.log("Component Rendered");
+  // const fetchData = async () => {
+  //   const URL =
+  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  //   const data = await fetch(URL);
+  //   const json = await data.json();
+
+  //   setListofrestaurants(
+  //     json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurant
+  //   );
+  //   setFilteredResto(
+  //     json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  //   );
+  // };
 
   //Conditional Rendering
   // if (listofRestaurants.length == 0) {
   //   return <Shimmer />;
   // }
+  const onlineStatus = useOnlineStatus();
+  if(!onlineStatus){
+    return <h1>Net Gandlay, Looks like you're offline, Please check your Internet Connectivity</h1>
+  }
 
-  return listofRestaurants.length == 0 ? (
+  return resData.length == 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -50,7 +61,7 @@ const Body = () => {
           />
           <button
             onClick={() => {
-              const filteredRestaurants = listofRestaurants.filter((res) =>
+              const filteredRestaurants = resData[0].filter((res) =>
                 res.info.name.toLowerCase().includes(serachResto.toLowerCase())
               );
               setFilteredResto(filteredRestaurants);
@@ -61,7 +72,7 @@ const Body = () => {
           <button
             className="filter-btn"
             onClick={() => {
-              const filterdata = listofRestaurants.filter(
+              const filterdata = resData[0].filter(
                 (res) => res?.info?.avgRating > 4
               );
               setFilteredResto(filterdata);
