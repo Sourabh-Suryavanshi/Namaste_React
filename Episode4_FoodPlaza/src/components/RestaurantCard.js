@@ -5,9 +5,9 @@ const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
     resData?.info;
   return (
-    <div className="res-card">
+    <div className="m-4 p-4 w-[250px] h-[450px]" style={{backgroundColor:"#f0f0f0"}}>
       <img
-        className="res-image"
+        className="w-52 h-52"
         alt="res-logo"
         src={RESTIMG_URL + cloudinaryImageId}
       />
@@ -19,5 +19,15 @@ const RestaurantCard = ({ resData }) => {
     </div>
   );
 };
+export const WithRestaurantOpen = (RestaurantCard)=>{
+  return(props)=>{
+    return(
+      <div>
+        <label className="absolute m-2 p-2 bg-black text-white color rounded-lg">Open</label>
+        <RestaurantCard {...props}/>
+        </div>
+    )
+  }
+}
 
 export default RestaurantCard;
