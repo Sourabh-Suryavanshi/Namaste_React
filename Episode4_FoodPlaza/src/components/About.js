@@ -12,8 +12,8 @@ const About = () => {
     if (count == 10) setDisable(true);
   };
   return (
-    <div>
-      <h1>About Us</h1>
+    <div className="">
+      <h1 className="text-4xl">About Us</h1>
       <h2>Count : {count}</h2>
       <h2>This webpage is designed by Mr. Sourabh Sambhaji Suryavanshi</h2>
       <div className="User-Component">

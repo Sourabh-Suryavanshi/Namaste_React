@@ -16,7 +16,7 @@ const Users = (props) =>{
         }
     },[])
     return(
-        <div className="user-card">
+        <div className="border-solid border-2 border-black m-4 p-4 w-[250px]">
             <h1>Count : {count}</h1>
             <button onClick={()=>{
                 IncrementCount()
